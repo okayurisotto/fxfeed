@@ -1,0 +1,17 @@
+{
+  "name": "fxfeed",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "cf-typegen": "wrangler types"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "2.0.7",
+    "typescript": "5.9.3",
+    "wrangler": "4.45.4"
+  }
+}

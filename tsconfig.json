@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": null,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": [
+      "es2021"
+    ],
+    "module": "es2022",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "target": "es2021",
+    "types": [
+      "./worker-configuration.d.ts"
+    ]
+  },
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "exclude": [
+    "test"
+  ],
+  "include": [
+    "worker-configuration.d.ts",
+    "src/**/*.ts"
+  ]
+}
