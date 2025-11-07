@@ -3,11 +3,18 @@ import { sources } from "./sources.js";
 const getFallback = (status: number): Response => {
   return new Response(
     `<!DOCTYPE html>` +
+    `<html lang="en">` +
     `<title>Unofficial Firefox Release Notes Feed</title>` +
     Object.entries(sources).map(([channel, { title: name }]) => (
       `<link rel="alternate" type="application/atom+xml" href="/${channel}/atom" title="${name}">`
     )).join("") +
     `<h1>Unofficial Firefox Release Notes Feed</h1>` +
+    `<p>` +
+    `The source code is available on <a href="https://github.com/okayurisotto/fxfeed">GitHub</a>.` +
+    `<br>` +
+    `For more information, see the <code>README.md</code> in the GitHub repository.` +
+    `</p>` +
+    `<hr>` +
     `<h2>RSS 1.0</h2>` +
     `<p>Not implemented.` +
     `<h2>RSS 2.0</h2>` +
