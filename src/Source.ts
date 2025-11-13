@@ -1,6 +1,12 @@
 import { env } from "cloudflare:workers";
 import type { Result } from "./Result.js";
 
+export const CONTENT_TYPES = {
+  "atom": "application/atom+xml"
+} as const satisfies Record<string, string>;
+
+export type ContentType = keyof typeof CONTENT_TYPES;
+
 const GENERATOR = env.USER_AGENT;
 
 type Entry = {
@@ -16,7 +22,7 @@ export abstract class Source {
 
   public abstract getEntries(): Promise<Result<Entry[]>>;
 
-  public async generate(type: "atom"): Promise<Result<string>> {
+  public async generate(type: ContentType): Promise<Result<string>> {
     const entries = await this.getEntries();
     if (!entries.ok) {
       console.error("Entries could not be retrieved.");

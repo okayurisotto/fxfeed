@@ -84,7 +84,7 @@ class FirefoxiOSSource extends FirefoxSource {
   }
 }
 
-export const sources: Record<string, Source> = {
+export const sources = {
   "desktop": new FirefoxSource({
     title: "Firefox Release Notes - Desktop",
     link: "https://www.firefox.com/en-US/firefox/notes/",
@@ -110,4 +110,4 @@ export const sources: Record<string, Source> = {
     link: "https://www.firefox.com/en-US/firefox/ios/notes/",
     baseTitle: "Firefox iOS ",
   }),
-};
+} as const satisfies Record<string, Source>;

@@ -7,6 +7,7 @@ declare namespace Cloudflare {
 	}
 	interface Env {
 		USER_AGENT: string;
+		fxfeed: R2Bucket;
 	}
 }
 interface Env extends Cloudflare.Env {}

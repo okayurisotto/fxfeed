@@ -10,6 +10,17 @@
   "observability": {
     "enabled": true
   },
+  "triggers": {
+    "crons": [
+      "0 * * * *",
+    ]
+  },
+  "r2_buckets": [
+    {
+      "bucket_name": "fxfeed",
+      "binding": "fxfeed"
+    }
+  ],
   /**
    * Smart Placement
    * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
