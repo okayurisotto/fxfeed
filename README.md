@@ -1,7 +1,7 @@
 # fxfeed: Unofficial Firefox Release Notes Feed
 
 A lightweight Atom feed generator for the latest Firefox release notes.
-The feed is available at [fxfeed.okayurisotto.workers.dev](https://fxfeed.okayurisotto.workers.dev/).
+The feed is available at [fxfeed.okayurisotto.net](https://fxfeed.okayurisotto.net/).
 
 ## Overview
 
@@ -15,7 +15,7 @@ The feed is available at [fxfeed.okayurisotto.workers.dev](https://fxfeed.okayur
 The Worker identifies itself as:
 
 ```
-User-Agent: fxfeed/0.1.1 (+https://github.com/okayurisotto/fxfeed)
+User-Agent: fxfeed/0.1.2 (+https://github.com/okayurisotto/fxfeed)
 ```
 
 ## Disclaimer
