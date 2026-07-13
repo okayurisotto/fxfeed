@@ -9,7 +9,7 @@
     "start": "wrangler dev",
     "cf-typegen": "wrangler types"
   },
-  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c",
+  "packageManager": "pnpm@11.12.0+sha512.820a6fbd0d9f04c226638002aead1e45340a9139dd5dc077c1d83ef44aa2481c8eb6637b4c9aa696a3c7e35ba818e49cf27213e5f2b91138d09b7a3e26e898ba",
   "devDependencies": {
     "@tsconfig/strictest": "2.0.7",
     "typescript": "5.9.3",
