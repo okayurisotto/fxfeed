@@ -14,7 +14,7 @@ HTTP requests are not served by generating feed content in the Worker. Instead, 
 The Worker identifies itself as:
 
 ```
-User-Agent: fxfeed/0.1.2 (+https://github.com/okayurisotto/fxfeed)
+User-Agent: fxfeed/0.2.0 (+https://github.com/okayurisotto/fxfeed)
 ```
 
 ## Disclaimer
