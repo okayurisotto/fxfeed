@@ -84,30 +84,32 @@ class FirefoxiOSSource extends FirefoxSource {
   }
 }
 
-export const sources = {
-  "desktop": new FirefoxSource({
-    title: "Firefox Release Notes – Desktop",
-    link: "https://www.firefox.com/en-US/firefox/notes/",
-    baseTitle: "Firefox Desktop ",
-  }),
-  "desktop-beta": new FirefoxSource({
-    title: "Firefox Release Notes – Desktop Beta",
-    link: "https://www.firefox.com/en-US/firefox/beta/notes/",
-    baseTitle: "Firefox Desktop Beta ",
-  }),
-  "desktop-nightly": new FirefoxSource({
-    title: "Firefox Release Notes – Desktop Nightly",
-    link: "https://www.firefox.com/en-US/firefox/nightly/notes/",
-    baseTitle: "Firefox Desktop Nightly ",
-  }),
-  "android": new FirefoxAndroidSource({
-    title: "Firefox Release Notes – Android",
-    link: "https://www.firefox.com/en-US/firefox/android/notes/",
-    baseTitle: "Firefox Android ",
-  }),
-  "ios": new FirefoxiOSSource({
-    title: "Firefox Release Notes – iOS",
-    link: "https://www.firefox.com/en-US/firefox/ios/notes/",
-    baseTitle: "Firefox iOS ",
-  }),
-} as const satisfies Record<string, Source>;
+export const getSources = () => {
+  return {
+    "desktop": new FirefoxSource({
+      title: "Firefox Release Notes – Desktop",
+      link: "https://www.firefox.com/en-US/firefox/notes/",
+      baseTitle: "Firefox Desktop ",
+    }),
+    "desktop-beta": new FirefoxSource({
+      title: "Firefox Release Notes – Desktop Beta",
+      link: "https://www.firefox.com/en-US/firefox/beta/notes/",
+      baseTitle: "Firefox Desktop Beta ",
+    }),
+    "desktop-nightly": new FirefoxSource({
+      title: "Firefox Release Notes – Desktop Nightly",
+      link: "https://www.firefox.com/en-US/firefox/nightly/notes/",
+      baseTitle: "Firefox Desktop Nightly ",
+    }),
+    "android": new FirefoxAndroidSource({
+      title: "Firefox Release Notes – Android",
+      link: "https://www.firefox.com/en-US/firefox/android/notes/",
+      baseTitle: "Firefox Android ",
+    }),
+    "ios": new FirefoxiOSSource({
+      title: "Firefox Release Notes – iOS",
+      link: "https://www.firefox.com/en-US/firefox/ios/notes/",
+      baseTitle: "Firefox iOS ",
+    }),
+  } as const satisfies Record<string, Source>;
+};

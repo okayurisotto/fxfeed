@@ -38,21 +38,27 @@ export abstract class Source {
   public abstract readonly title: string;
   public abstract readonly link: string;
 
+  public entries: Entry[] | null = null;
+
   public abstract getEntries(): Promise<Result<Entry[]>>;
 
   public async generate(type: ContentType): Promise<Result<string>> {
-    const entries = await this.getEntries();
-    if (!entries.ok) {
-      console.error("Entries could not be retrieved.");
-      return { ok: false };
+    if (this.entries === null) {
+      const entries = await this.getEntries();
+      if (entries.ok) {
+        this.entries = entries.value;
+      } else {
+        console.error("Entries could not be retrieved.");
+        return { ok: false };
+      }
     }
 
-    if (type === "markdown") return { ok: true, value: this.generateMarkdown(entries.value) };
-    if (type === "html") return { ok: true, value: this.generateHtml(entries.value) };
-    if (type === "rss1") return { ok: true, value: this.generateRss1(entries.value) };
-    if (type === "rss2") return { ok: true, value: this.generateRss2(entries.value) };
-    if (type === "atom") return { ok: true, value: this.generateAtom(entries.value) };
-    if (type === "jsonfeed") return { ok: true, value: this.generateJsonFeed(entries.value) };
+    if (type === "markdown") return { ok: true, value: this.generateMarkdown(this.entries) };
+    if (type === "html") return { ok: true, value: this.generateHtml(this.entries) };
+    if (type === "rss1") return { ok: true, value: this.generateRss1(this.entries) };
+    if (type === "rss2") return { ok: true, value: this.generateRss2(this.entries) };
+    if (type === "atom") return { ok: true, value: this.generateAtom(this.entries) };
+    if (type === "jsonfeed") return { ok: true, value: this.generateJsonFeed(this.entries) };
 
     return type satisfies never;
   }
