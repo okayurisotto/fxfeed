@@ -86,27 +86,27 @@ class FirefoxiOSSource extends FirefoxSource {
 
 export const sources = {
   "desktop": new FirefoxSource({
-    title: "Firefox Release Notes - Desktop",
+    title: "Firefox Release Notes – Desktop",
     link: "https://www.firefox.com/en-US/firefox/notes/",
     baseTitle: "Firefox Desktop ",
   }),
   "desktop-beta": new FirefoxSource({
-    title: "Firefox Release Notes - Desktop Beta",
+    title: "Firefox Release Notes – Desktop Beta",
     link: "https://www.firefox.com/en-US/firefox/beta/notes/",
     baseTitle: "Firefox Desktop Beta ",
   }),
   "desktop-nightly": new FirefoxSource({
-    title: "Firefox Release Notes - Desktop Nightly",
+    title: "Firefox Release Notes – Desktop Nightly",
     link: "https://www.firefox.com/en-US/firefox/nightly/notes/",
     baseTitle: "Firefox Desktop Nightly ",
   }),
   "android": new FirefoxAndroidSource({
-    title: "Firefox Release Notes - Android",
+    title: "Firefox Release Notes – Android",
     link: "https://www.firefox.com/en-US/firefox/android/notes/",
     baseTitle: "Firefox Android ",
   }),
   "ios": new FirefoxiOSSource({
-    title: "Firefox Release Notes - iOS",
+    title: "Firefox Release Notes – iOS",
     link: "https://www.firefox.com/en-US/firefox/ios/notes/",
     baseTitle: "Firefox iOS ",
   }),
