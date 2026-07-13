@@ -2,7 +2,7 @@ import { CONTENT_TYPES, type ContentType } from "./Source.js";
 import { sources } from "./sources.js";
 
 export default {
-  async fetch(request, env, ctx): Promise<Response> {
+  async fetch(request, _env, _ctx): Promise<Response> {
     const pathname = new URL(request.url).pathname;
 
     return new Response(null, {
@@ -13,7 +13,7 @@ export default {
     });
   },
 
-  async scheduled(controller, env, ctx): Promise<void> {
+  async scheduled(_controller, env, _ctx): Promise<void> {
     for (const [channel, source] of Object.entries(sources)) {
       for (const [type_, contentType] of Object.entries(CONTENT_TYPES)) {
         const type = type_ as ContentType;
