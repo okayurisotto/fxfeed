@@ -7,10 +7,9 @@ The feed is available at [fxfeed.okayurisotto.net](https://fxfeed.okayurisotto.n
 
 **fxfeed** is a tiny Cloudflare Worker that provides an Atom feed for the most recent Firefox release notes. Since Mozilla currently does not offer an official RSS or Atom feed for this information, this tool follows the public redirect already used on the Firefox website.
 
-1. When someone accesses the fxfeed endpoint, the Worker sends a single HEAD request to the official Firefox release notes redirect URL (e.g. `https://www.firefox.com/en-US/firefox/notes/`).
-2. It retrieves the value of the `Location` header from the response.
-3. It returns a minimal Atom feed containing one entry pointing to that URL.
-4. Responses are cached for 3 minutes to minimize requests and avoid unnecessary load on Mozilla’s servers.
+The Worker generates feeds on a scheduled Cloudflare Cron Trigger and writes them to Cloudflare R2. The cron schedule is `0 * * * *`, so the feed is refreshed hourly.
+
+HTTP requests are not served by generating feed content in the Worker. Instead, the `fetch` handler returns a redirect to the corresponding object hosted from R2, where the generated Atom feed is delivered.
 
 The Worker identifies itself as:
 
